@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Chrono Runner</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/babylonjs@9.15.0/babylon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babylonjs-loaders@9.15.0/babylonjs.loaders.min.js"></script>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="hud-top">
+      <div class="hud-box" id="hud-distance">0 m</div>
+      <div class="hud-box hud-era" id="hud-era">Fantasía Medieval</div>
+      <div class="hud-box" id="hud-coins">🪙 0</div>
+    </div>
+    <div id="hud-powerups"></div>
+    <div id="era-banner" class="hidden"></div>
+    <button id="btn-shoot" class="hidden">🔫</button>
+  </div>
+
+  <!-- Pantalla de carga -->
+  <div id="screen-loading" class="screen">
+    <h1>CHRONO RUNNER</h1>
+    <p id="loading-text">Cargando la línea temporal…</p>
+    <div class="loading-bar"><div id="loading-fill"></div></div>
+  </div>
+
+  <!-- Menú principal -->
+  <div id="screen-menu" class="screen hidden">
+    <h1>CHRONO RUNNER</h1>
+    <p class="subtitle">Corre a través de las eras: de los castillos a las estrellas</p>
+    <div class="menu-stats">
+      <span id="menu-best">Récord: 0 m</span>
+      <span id="menu-bank">🪙 0</span>
+    </div>
+    <div class="menu-buttons">
+      <button id="btn-play" class="btn-primary">▶ Jugar</button>
+      <button id="btn-shop">🛒 Tienda</button>
+      <button id="btn-chars">🧍 Personajes</button>
+      <button id="btn-help">❓ Cómo jugar</button>
+    </div>
+    <p class="credits">Assets: Kenney (kenney.nl) · Motor: Babylon.js</p>
+  </div>
+
+  <!-- Tienda -->
+  <div id="screen-shop" class="screen hidden">
+    <h2>Tienda de mejoras</h2>
+    <p class="menu-stats"><span id="shop-bank">🪙 0</span></p>
+    <div id="shop-grid"></div>
+    <button class="btn-back" data-back>← Volver</button>
+  </div>
+
+  <!-- Personajes -->
+  <div id="screen-chars" class="screen hidden">
+    <h2>Personajes</h2>
+    <p class="menu-stats"><span id="chars-bank">🪙 0</span></p>
+    <div id="chars-grid"></div>
+    <button class="btn-back" data-back>← Volver</button>
+  </div>
+
+  <!-- Cómo jugar -->
+  <div id="screen-help" class="screen hidden">
+    <h2>Cómo jugar</h2>
+    <div class="help-body">
+      <p>◀ ▶ / A D — cambiar de carril</p>
+      <p>▲ / W / Espacio — saltar</p>
+      <p>▼ / S — deslizarse</p>
+      <p>X o clic — disparar (con bláster)</p>
+      <p>P / Esc — pausa</p>
+      <p>En móvil: desliza el dedo para moverte, saltar o agacharte.</p>
+      <p>Sobrevive para viajar por 5 eras: Fantasía, Piratas, Urbano Retro, Ciudad Moderna y el Espacio. Recoge monedas y comida, usa power-ups (escudo, imán, turbo y bláster) y compra mejoras permanentes en la tienda.</p>
+    </div>
+    <button class="btn-back" data-back>← Volver</button>
+  </div>
+
+  <!-- Pausa -->
+  <div id="screen-pause" class="screen hidden">
+    <h2>Pausa</h2>
+    <div class="menu-buttons">
+      <button id="btn-resume" class="btn-primary">▶ Continuar</button>
+      <button id="btn-quit">🏠 Menú principal</button>
+    </div>
+  </div>
+
+  <!-- Game over -->
+  <div id="screen-gameover" class="screen hidden">
+    <h2>Fin del viaje</h2>
+    <div class="go-stats">
+      <p id="go-distance">0 m</p>
+      <p id="go-era"></p>
+      <p id="go-coins"></p>
+      <p id="go-record" class="hidden">🏆 ¡Nuevo récord!</p>
+      <p id="go-unlock" class="hidden"></p>
+    </div>
+    <div class="menu-buttons">
+      <button id="btn-retry" class="btn-primary">↻ Reintentar</button>
+      <button id="btn-menu">🏠 Menú</button>
+    </div>
+  </div>
+
+  <script src="bundle.180dffc024.js"></script>
+</body>
+</html>

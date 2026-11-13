@@ -12,6 +12,8 @@
 <body>
   <canvas id="game-canvas"></canvas>
   <div id="flash"></div>
+  <!-- Aviso de logro conseguido: por encima de todo, también de los menús -->
+  <div id="aviso-logro" class="hidden"></div>
 
   <!-- HUD -->
   <div id="hud" class="hidden">
@@ -42,8 +44,11 @@
     </div>
     <div class="menu-buttons">
       <button id="btn-play" class="btn-primary">▶ Jugar</button>
+      <button id="btn-dificultad">🙂 Dificultad: Normal</button>
+      <p id="dificultad-desc" class="dif-desc">La carrera de siempre.</p>
       <button id="btn-shop">🛒 Tienda</button>
       <button id="btn-chars">🧍 Personajes</button>
+      <button id="btn-logros">🏆 Logros</button>
       <button id="btn-help">❓ Cómo jugar</button>
       <div class="menu-row">
         <button id="btn-musica">🎵 Música: Sí</button>
@@ -69,6 +74,14 @@
     <button class="btn-back" data-back>← Volver</button>
   </div>
 
+  <!-- Logros -->
+  <div id="screen-logros" class="screen hidden">
+    <h2>Logros</h2>
+    <p class="menu-stats"><span id="logros-resumen"></span></p>
+    <div id="logros-grid"></div>
+    <button class="btn-back" data-back>← Volver</button>
+  </div>
+
   <!-- Cómo jugar -->
   <div id="screen-help" class="screen hidden">
     <h2>Cómo jugar</h2>
@@ -82,6 +95,8 @@
       <p>En móvil: desliza el dedo para moverte, saltar o agacharte.</p>
       <p>Sobrevive para viajar por 5 eras: Fantasía, Piratas, Urbano Retro, Ciudad Moderna y el Espacio. Recoge monedas y comida y compra mejoras permanentes en la tienda.</p>
       <p>Los power-ups se acumulan: cada escudo que recojas es una carga más, y el imán y el turbo suman tiempo al que ya te quede. El bláster no caduca — dura los disparos que tenga, y cada cápsula suma munición.</p>
+      <p>Dificultad: en Difícil hay gente corriendo hacia ti por la pista (cámbiate de carril o derríbala con el bláster); en Extremo, además, alguno cambia de carril al acercarse y hay huecos en el suelo que hay que saltar. Las dos pagan más monedas y guardan su propio récord.</p>
+      <p>Logros: cruzar una era sin chocar, no dejarte ni una moneda, llegar a cada era… Cada uno paga monedas, y en «🏆 Logros» ves cuánto te falta.</p>
     </div>
     <button class="btn-back" data-back>← Volver</button>
   </div>
@@ -104,10 +119,12 @@
     <h2>Fin del viaje</h2>
     <div class="go-stats">
       <p id="go-distance">0 m</p>
+      <p id="go-causa" class="hidden">🕳️ Caíste por un hueco</p>
       <p id="go-era"></p>
       <p id="go-coins"></p>
       <p id="go-record" class="hidden">🏆 ¡Nuevo récord!</p>
       <p id="go-unlock" class="hidden"></p>
+      <p id="go-logros" class="hidden"></p>
     </div>
     <div class="menu-buttons">
       <button id="btn-retry" class="btn-primary">↻ Reintentar</button>
@@ -115,6 +132,6 @@
     </div>
   </div>
 
-  <script src="bundle.a263929fa3.js"></script>
+  <script src="bundle.1bb842a93b.js"></script>
 </body>
 </html>

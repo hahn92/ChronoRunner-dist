@@ -23,6 +23,12 @@
       <div class="hud-box" id="hud-coins">🪙 0</div>
     </div>
     <div id="hud-powerups"></div>
+    <!-- Racha: jugadas seguidas y su multiplicador (racha.js) -->
+    <div id="hud-racha" class="hidden">
+      <div class="racha-linea"><span id="racha-cuenta">Racha 2</span><span id="racha-mult">×1</span></div>
+      <div class="racha-barra"><i id="racha-resto"></i></div>
+      <div id="racha-ultima"></div>
+    </div>
     <div id="era-banner" class="hidden"></div>
     <button id="btn-shoot" class="hidden">🔫</button>
   </div>
@@ -96,6 +102,7 @@
       <p>Sobrevive para viajar por 5 eras: Fantasía, Piratas, Urbano Retro, Ciudad Moderna y el Espacio. Recoge monedas y comida y compra mejoras permanentes en la tienda.</p>
       <p>Los power-ups se acumulan: cada escudo que recojas es una carga más, y el imán y el turbo suman tiempo al que ya te quede. El bláster no caduca — dura los disparos que tenga, y cada cápsula suma munición.</p>
       <p>Dificultad: en Difícil hay gente corriendo hacia ti por la pista (cámbiate de carril o derríbala con el bláster); en Extremo, además, alguno cambia de carril al acercarse y hay huecos en el suelo que hay que saltar. Las dos pagan más monedas y guardan su propio récord.</p>
+      <p>Racha: saltar un obstáculo, pasar por debajo de una barrera, esquivar a un corredor, saltar un hueco, derribar algo o apartarte en el último momento («¡Por poco!», que paga doble) suma a la racha y da monedas. Cada 5 jugadas seguidas sube el multiplicador, hasta ×5. Se pierde con un golpe o si pasan unos segundos sin jugada; las monedas la mantienen viva.</p>
       <p>Logros: cruzar una era sin chocar, no dejarte ni una moneda, llegar a cada era… Cada uno paga monedas, y en «🏆 Logros» ves cuánto te falta.</p>
     </div>
     <button class="btn-back" data-back>← Volver</button>
@@ -122,6 +129,7 @@
       <p id="go-causa" class="hidden">🕳️ Caíste por un hueco</p>
       <p id="go-era"></p>
       <p id="go-coins"></p>
+      <p id="go-racha" class="hidden"></p>
       <p id="go-record" class="hidden">🏆 ¡Nuevo récord!</p>
       <p id="go-unlock" class="hidden"></p>
       <p id="go-logros" class="hidden"></p>
@@ -132,6 +140,6 @@
     </div>
   </div>
 
-  <script src="bundle.f4916cc1fb.js"></script>
+  <script src="bundle.1655ea5875.js"></script>
 </body>
 </html>
